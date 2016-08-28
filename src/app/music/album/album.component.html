@@ -1,0 +1,27 @@
+<div>
+  <span *ngIf="!album">Loading album...</span>
+  <article *ngIf="album">
+    <header>
+      <h1>{{album.name}}</h1>
+    </header>
+    <section>
+      <h3>Artists</h3>
+      <ul>
+        <li *ngFor="let artist of album.artists">{{artist.name}}</li>
+      </ul>
+    </section>
+    <section>
+      <header>
+        <h3>Tracks</h3>
+      </header>
+      <ol>
+        <li *ngFor="let track of album.tracks.items">
+          <span>{{track.name}}</span>
+          <audio controls>
+            <source [src]="track.preview_url" type="audio/mpeg" >
+          </audio>
+        </li>
+      </ol>
+    </section>
+  </article>
+</div>

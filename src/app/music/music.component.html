@@ -1,0 +1,6 @@
+<div>
+  <music-search-box (tracks)="tracks = $event" (loading)="loading = $event"></music-search-box>
+</div>
+<div>
+  <track-results [tracks]="tracks" [loadingTracks]="loading"></track-results>
+</div>
